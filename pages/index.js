@@ -493,6 +493,12 @@ export default function Home() {
             </div>
           )}
         </div>
+
+        {/* Actions */}
+        <div className={styles.actions}>
+          <button className={styles.actions__back}>Back</button>
+          <button className={styles.actions__create}>Create</button>
+        </div>
       </div>
     </div>
   );
