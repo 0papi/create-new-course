@@ -29,7 +29,7 @@
   border-radius: 24px;
   max-width: 1179px;
   padding: 20px 40px;
-  height: 600px;
+  height: 800px;
   overflow-y: scroll;
   margin: auto;
   margin-bottom: 1rem;
@@ -151,16 +151,35 @@
   }
 }
 
+// FORM SELECT STYLES
 .form_group select {
-  width: 300px;
+  max-width: 300px;
   margin-top: 10px;
   display: block;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 24px;
-  padding: 10px 20px;
+  padding: 10px 10px;
 }
 
+.instructor_select:focus {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: none;
+}
+.instructor_select option {
+  background-color: #fff;
+  border: none;
+  color: #000;
+  font-weight: bold;
+
+  &:disabled {
+    color: rgba(0, 0, 0, 0.5);
+    background-color: none;
+  }
+}
+
+// SELECTED INSTRUCTOR STYLES
 .selectedInstructor_wrapper {
   display: flex;
   align-items: center;
