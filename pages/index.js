@@ -112,12 +112,6 @@ export default function Home() {
 
   // instructors
   function onInstructorChange(e) {
-    if (
-      selectedInstructors.some((selected) => selected.name === e.target.value)
-    ) {
-      alert("Instructor already selected");
-      return;
-    }
     setSelectedInstructors((prevInstructors) => [
       ...prevInstructors,
       { id: prevInstructors.length + 1, name: e.target.value },
