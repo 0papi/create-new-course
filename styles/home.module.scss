@@ -82,6 +82,7 @@
 
 .form_group label {
   font-weight: bold;
+  color: #000;
 }
 
 .form_group input[type="text"],
@@ -187,6 +188,18 @@
   }
 }
 
+.instructor_wrapper {
+  display: flex;
+  align-items: flex-start;
+  row-gap: 20px;
+  flex-direction: column;
+
+  label {
+    font-weight: bold;
+    color: #000;
+  }
+}
+
 // SELECTED INSTRUCTOR STYLES
 .selectedInstructor_wrapper {
   display: flex;
@@ -262,5 +275,75 @@
   &__create {
     background-color: #000;
     color: #fff;
+  }
+}
+
+// DROPDOWN SELECT
+// .dropdown_container {
+//   margin: auto;
+// }
+.dropdown_header {
+  width: 250px;
+  padding: 0 20px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  img {
+    cursor: pointer;
+  }
+
+  p {
+    font-size: 14px;
+    cursor: pointer;
+  }
+}
+
+.dropdown_main_wrapper {
+  margin-top: 20px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding-left: 20px;
+  width: 250px;
+  height: 200px;
+  overflow-y: scroll;
+
+  scroll-behavior: smooth;
+  scrollbar-width: auto;
+  scrollbar-color: #000 #fff;
+}
+
+.dropdown_main_wrapper::-webkit-scrollbar {
+  width: 10px;
+  scroll-behavior: smooth;
+}
+
+.dropdown_main_wrapper::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+}
+
+.dropdown_main_wrapper::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 24px;
+  max-height: 10px;
+}
+
+.dropdown_main {
+  // width: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
   }
 }

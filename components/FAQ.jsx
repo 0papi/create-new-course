@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Dropdown from "./Dropdown";
 
 import styles from "../styles/home.module.scss";
 import { faqData } from "./data";
@@ -66,6 +67,8 @@ export default function FAQs() {
         />
         <p onClick={onAddNewFaq}>+Add another FAQ</p>
       </div>
+
+      <Dropdown />
     </div>
   );
 }
