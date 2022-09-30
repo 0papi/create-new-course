@@ -20,16 +20,11 @@ export default function Home() {
     classRequirementsData
   );
 
-  const [instructors, setInstructors] = useState(instructorsData);
-
   const [createFaqs, setCreateFaqs] = useState("");
 
   function onFaqChange(e) {
     setCreateFaqs(e.target.value);
   }
-
-  // selected instructors state
-  const [selectedInstructors, setSelectedInstructors] = useState([]);
 
   const [formData, setFormData] = useState({
     topic: "",
@@ -39,7 +34,9 @@ export default function Home() {
     requirements: "",
     preRegistration: "YES",
     explainer: "YES",
+    explainerLink: "",
     brandColor: "custom",
+    customColor: "",
     cost: "paid",
     currency: "",
     costPaid: "",
@@ -57,13 +54,9 @@ export default function Home() {
     cost,
     costPaid,
     currency,
+    explainerLink,
+    customColor,
   } = formData;
-
-  console.log({
-    costPaid,
-    currency,
-    cost,
-  });
 
   function onChange(e) {
     setFormData((prevForm) => ({
@@ -109,21 +102,6 @@ export default function Home() {
       ...prevData,
       requirements: "",
     }));
-  }
-
-  // instructors
-  function onInstructorChange(e) {
-    setSelectedInstructors((prevInstructors) => [
-      ...prevInstructors,
-      { id: prevInstructors.length + 1, name: e.target.value },
-    ]);
-  }
-
-  // deleted selectors instructors
-  function onDeleteSelectedInstructor(id) {
-    setSelectedInstructors((prevInstructors) =>
-      prevInstructors.filter((instructor) => instructor.id !== id)
-    );
   }
   return (
     <div>
@@ -338,6 +316,9 @@ export default function Home() {
                 type="url"
                 placeholder="put Youtube link here"
                 className={styles.form_group_addon}
+                name="explainerLink"
+                value={explainerLink}
+                onChange={onChange}
               />
             )}
           </div>
@@ -407,6 +388,9 @@ export default function Home() {
                 type="text"
                 placeholder="enter a custom color: #fff"
                 className={styles.form_group_addon}
+                name="customColor"
+                value={customColor}
+                onChange={onChange}
               />
             )}
           </div>
